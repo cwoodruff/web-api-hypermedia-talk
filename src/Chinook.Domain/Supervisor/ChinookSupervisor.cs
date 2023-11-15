@@ -32,8 +32,6 @@ public partial class ChinookSupervisor : IChinookSupervisor
 
     private readonly IMemoryCache _cache;
 
-    private readonly IDistributedCache _distributedCache;
-
     public ChinookSupervisor(IAlbumRepository albumRepository,
         IArtistRepository artistRepository,
         ICustomerRepository customerRepository,
@@ -54,8 +52,7 @@ public partial class ChinookSupervisor : IChinookSupervisor
         IValidator<MediaTypeApiModel> mediaTypeValidator,
         IValidator<PlaylistApiModel> playlistValidator,
         IValidator<TrackApiModel> trackValidator,
-        IMemoryCache memoryCache,
-        IDistributedCache distributedCache
+        IMemoryCache memoryCache
     )
     {
         _albumRepository = albumRepository;
@@ -81,6 +78,5 @@ public partial class ChinookSupervisor : IChinookSupervisor
         _trackValidator = trackValidator;
 
         _cache = memoryCache;
-        _distributedCache = distributedCache;
     }
 }

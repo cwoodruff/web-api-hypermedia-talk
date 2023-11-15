@@ -82,12 +82,6 @@ public static class ServicesConfiguration
     {
         services.AddResponseCaching();
         services.AddMemoryCache();
-        services.AddDistributedSqlServerCache(options =>
-        {
-            options.ConnectionString = configuration.GetConnectionString("ChinookSQLCache");
-            options.SchemaName = "dbo";
-            options.TableName = "ChinookCache";
-        });
     }
     
     public static void AddHypermedia(this IServiceCollection services)
