@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="7.0.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Helpers\RepresentationListEnricher.cs" />
+  </ItemGroup>
+
 </Project>

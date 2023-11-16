@@ -6,9 +6,9 @@ namespace Chinook.Domain.Helpers;
 public class RepresentationEnricher : IAsyncResultFilter
 {
     private readonly IEnumerable<IEnricher> _enrichers;
-    private readonly IEnumerable<IListEnricher> _listEnrichers;
+    private readonly IEnumerable<IEnricher> _listEnrichers;
 
-    public RepresentationEnricher(IEnumerable<IEnricher> enrichers, IEnumerable<IListEnricher> listEnrichers)
+    public RepresentationEnricher(IEnumerable<IEnricher> enrichers, IEnumerable<IEnricher> listEnrichers)
     {
         _enrichers = enrichers;
         _listEnrichers = listEnrichers;

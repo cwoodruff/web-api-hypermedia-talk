@@ -2,7 +2,7 @@
 
 namespace Chinook.Domain.Helpers;
 
-public abstract class ListEnricher<T> : IListEnricher
+public abstract class ListEnricher<T> : IEnricher
 {
     public virtual Task<bool> Match(object target) =>
         target switch
