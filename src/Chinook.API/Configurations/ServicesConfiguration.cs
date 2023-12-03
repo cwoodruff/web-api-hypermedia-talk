@@ -1,3 +1,5 @@
+using AutoMapper.EquivalencyExpression;
+using Chinook.API.Profiles;
 using Chinook.Domain.Repositories;
 using Chinook.Domain.Supervisor;
 using Chinook.Data.Repositories;
@@ -81,7 +83,6 @@ public static class ServicesConfiguration
         IConfiguration configuration)
     {
         services.AddResponseCaching();
-        services.AddMemoryCache();
     }
     
     public static void AddHypermedia(this IServiceCollection services)
@@ -130,5 +131,13 @@ public static class ServicesConfiguration
             .AddScoped<IEnricher, TracksEnricher>();
 
         services.AddScoped<RepresentationEnricher>();
+    }
+
+    public static void AddAutoMapperConfig(this IServiceCollection services)
+    {
+        services.AddAutoMapper((serviceProvider, automapper) =>
+        {
+            automapper.AddCollectionMappers();
+        }, typeof(MapperConfig));
     }
 }

@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Chinook.Domain.Helpers;
+﻿namespace Chinook.Domain.Helpers;
 
 public abstract class ListEnricher<T> : IEnricher
 {
